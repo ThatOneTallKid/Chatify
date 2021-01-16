@@ -108,7 +108,6 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.7.0"
   pedantic:
     dependency: transitive
@@ -117,9 +116,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.0"
-=======
-    version: "1.8.0-nullsafety.1"
->>>>>>> f70c82f2bb95e82ad932b9bc9d8dda62327fdcf0
   sky_engine:
     dependency: transitive
     description: flutter
