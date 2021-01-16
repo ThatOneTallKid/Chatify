@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'Home.dart';
+
 class LoginSignupPage extends StatefulWidget {
   @override
   _LoginSignupPageState createState() => _LoginSignupPageState();
@@ -162,8 +164,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
                                         setState(() {
                                           loginSignUpError = "";
                                         });
-                                        // Navigator.pushReplacementNamed(
-                                        //     context, HomePage.id);
+                                        Navigator.pushReplacement(
+                                             context, MaterialPageRoute(builder: (BuildContext context) => Home()));     
                                       }
                                     }
                                   });
@@ -225,8 +227,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
                                         setState(() {
                                           loginSignUpError = "";
                                         });
-                                        // Navigator.pushReplacementNamed(
-                                        //     context, HomePage.id);
+                                         Navigator.pushReplacement(
+                                             context, MaterialPageRoute(builder: (BuildContext context) => Home()));
                                       }
                                     }
                                   });
