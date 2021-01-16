@@ -27,6 +27,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void getCurrentUser() async {
     try {
+      // ignore: await_only_futures
       final user = await _auth.currentUser;
       if (user != null) {
         loggedInUser = user;
@@ -40,23 +41,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: null,
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.close),
-              onPressed: () {
-                try {
-                  _auth.signOut();
-                  Navigator.pop(context);
-                } catch (e) {
-                  print(e);
-                }
-              }),
-        ],
-        title: Text('⚡️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
-      ),
+      
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
