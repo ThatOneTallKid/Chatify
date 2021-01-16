@@ -1,3 +1,4 @@
+import 'package:chatify/model/chat_page.dart';
 import 'package:chatify/screens/locate1.dart';
 import 'package:flutter/material.dart';
 import 'child_widget.dart';
@@ -8,7 +9,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  
   int _index = 0;
   Widget childWidget = ChildWidget(
     number: AvailableNumber.First,
@@ -16,17 +16,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     Widget child;
-  switch (_index) {
-    case 0:
-      child = FlutterLogo();
-      break;
-    case 1:
-      child = MyHomePage();
-      break;
-    case 2:
-      child = FlutterLogo(colors: Colors.red);
-      break;
-  }
+    switch (_index) {
+      case 0:
+        child = ChatScreen();
+        break;
+      case 1:
+        child = MyHomePage();
+        break;
+      case 2:
+        child = FlutterLogo();
+        break;
+    }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -39,9 +39,8 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.grey[500],
-        
         onTap: (newIndex) => setState(() => _index = newIndex),
-      currentIndex: _index,
+        currentIndex: _index,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
