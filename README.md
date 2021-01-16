@@ -1,4 +1,4 @@
-# chatify
+# Neighborly - a geofencing based application for interaction
 
 A new Flutter application.
 
