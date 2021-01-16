@@ -9,6 +9,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="chatify"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCg1PMsk8nno8mqZBzKY8DNrDXwrAqHxxk"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

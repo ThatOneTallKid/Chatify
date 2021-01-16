@@ -1,6 +1,5 @@
-
+import 'package:chatify/screens/locate1.dart';
 import 'package:flutter/material.dart';
-
 import 'child_widget.dart';
 
 class Home extends StatefulWidget {
@@ -9,12 +8,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentIndex = 0;
- Widget childWidget = ChildWidget(
+  
+  int _index = 0;
+  Widget childWidget = ChildWidget(
     number: AvailableNumber.First,
   );
   @override
   Widget build(BuildContext context) {
+    Widget child;
+  switch (_index) {
+    case 0:
+      child = FlutterLogo();
+      break;
+    case 1:
+      child = MyHomePage();
+      break;
+    case 2:
+      child = FlutterLogo(colors: Colors.red);
+      break;
+  }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -23,39 +35,13 @@ class _HomeState extends State<Home> {
           style: TextStyle(color: Color(0xFF0D4583)),
         ),
       ),
-      body: Container(
-        color: Colors.white,
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
-        ),
-      ),
+      body: SizedBox.expand(child: child),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.grey[500],
-        currentIndex: currentIndex,
-        onTap: (value) {
-          currentIndex = value;
-
-          switch (value) {
-            case 0:
-              childWidget = ChildWidget(number: AvailableNumber.First);
-              break;
-            case 1:
-              childWidget = ChildWidget(number: AvailableNumber.Second);
-              break;
-            case 2:
-              childWidget = ChildWidget(number: AvailableNumber.Third);
-              break;
-            case 3:
-              childWidget = ChildWidget(number: AvailableNumber.Third);
-              break;
-          }
-
-          setState(() {});
-        },
+        
+        onTap: (newIndex) => setState(() => _index = newIndex),
+      currentIndex: _index,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
@@ -69,10 +55,8 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.settings),
             title: Text("Settings"),
           ),
-         
         ],
       ),
-      
     );
   }
 }

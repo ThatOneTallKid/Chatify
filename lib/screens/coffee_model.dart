@@ -1,0 +1,59 @@
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+class Coffee {
+  String shopName;
+  String address;
+  String description;
+  String thumbNail;
+  LatLng locationCoords;
+
+  Coffee(
+      {this.shopName,
+      this.address,
+      this.description,
+      this.thumbNail,
+      this.locationCoords});
+}
+
+final List<Coffee> coffeeShops = [
+  Coffee(
+      shopName: 'Aditya Das',
+      address: '19 year, male',
+      description:
+          'A tall guy',
+      locationCoords: LatLng(40.745803, -73.988213),
+      thumbNail: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fboys&psig=AOvVaw3U0pA4VZ2PQgwR3yGaRlkA&ust=1610904270159000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJC_pJ_8oO4CFQAAAAAdAAAAABAD'
+      ),
+  Coffee(
+      shopName: 'Rupanshi Chawda',
+      address: '19 year, female',
+      description:
+          'An Avid Raven-haired girl',
+      locationCoords: LatLng(40.751908, -73.989804),
+      thumbNail: 'data:image/jpeg;base64,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'
+      ),
+  Coffee(
+      shopName: 'Taranpreet Singh',
+      address: '20 year, male',
+      description:
+          'Punjabi Munda',
+      locationCoords: LatLng(40.730148, -73.999639),
+      thumbNail: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fteenage-boys-men-blond-hair-young-men&psig=AOvVaw3U0pA4VZ2PQgwR3yGaRlkA&ust=1610904270159000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJC_pJ_8oO4CFQAAAAAdAAAAABAK'
+      ),
+  Coffee(
+      shopName: 'Aditi Das',
+      address: '20 years, female',
+      description:
+          'A very talkative girl',
+      locationCoords: LatLng(40.729515, -73.985927),
+      thumbNail: 'https://www.google.com/url?sa=i&url=http%3A%2F%2F7-themes.com%2F6950050-beautiful-girl-photography.html&psig=AOvVaw2GyHf5MAH1xnGjzaWVwKyv&ust=1610904399272000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCziNz8oO4CFQAAAAAdAAAAABAD'
+      ),
+  Coffee(
+      shopName: 'Souvik Kar',
+      address: '17 year, male',
+      description:
+          'Double battery',
+      locationCoords: LatLng(40.721622, -74.004308),
+      thumbNail: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fphoto%2Fclose-up-photography-of-a-boy-smiling-1249320%2F&psig=AOvVaw3U0pA4VZ2PQgwR3yGaRlkA&ust=1610904270159000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJC_pJ_8oO4CFQAAAAAdAAAAABAQ'
+      )
+];

@@ -1,7 +1,9 @@
+
+import 'package:chatify/screens/Home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'Home.dart';
+
 
 class LoginSignupPage extends StatefulWidget {
   @override
