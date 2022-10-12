@@ -33,6 +33,8 @@ Effectiveness of solution and ease of implementation -
   <img src="assets/images/iphone-x-mockup-scene-removebg-preview.png" width="45%"> 
 </p>
 
+[![Watch the video](https://github.com/rupanshi-chawda/Chatify/blob/main/assets/images/Screenshot%20(405).png)](https://drive.google.com/file/d/1s-szMI9WK1EcuAwgoa1KrJU5zLpqJ0QE/view)
+
 ## License
 _Copyright 2021_ **Aditya Das, Rupanshi Chawda and Taranpreet Singh Chabbra** <br/>
 
